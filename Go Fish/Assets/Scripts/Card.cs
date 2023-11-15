@@ -1,28 +1,31 @@
 public class Card
 {
-    int value;
-    string suit;
-
-    public Card(int i, string s){
-        value = i;
-        suit = s;
+    public int number {get;}    
+    public string suit {get;}
+    
+    public Card(int number, string suit){
+        this.number = number;
+        this.suit = suit;
     }
 
-    public string toString(){
+    public override string ToString(){
+        switch(number){
+            case(1):
+                return "Ace of " + suit;
 
-        switch(value){
-            case (13):
+            case(13):
                 return "King of " + suit;
 
-            case (12):
+            case(12):
                 return "Queen of " + suit;
-            
+
             case(11):
                 return "Jack of " + suit;
 
             default:
-                return value + " of " + suit;
+                return number + " of " + suit;
         }
+
     }
 
 }
